@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     var categoriesList:[Categories]?
+    var rankingList:[Rankings]?
+    
+    var globalProductList:[Products] = [Products]()
+    
 //    var productList:[Products]?
 //    var productVarientsList:[Variants]?
 //    var productTax:Tax?

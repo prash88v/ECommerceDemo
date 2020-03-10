@@ -121,17 +121,15 @@
 		8F53736B2411D5C700766988 /* ECommerceDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8F53736C2411D5C700766988 /* AppDelegate.swift */,
+				8F53736E2411D5C800766988 /* SceneDelegate.swift */,
 				8F5A8FC3241615BC001302AA /* View */,
 				8F5373A42412C41E00766988 /* Model */,
 				8F53739C2411DF0100766988 /* HelperClass */,
-				8F53736C2411D5C700766988 /* AppDelegate.swift */,
-				8F53736E2411D5C800766988 /* SceneDelegate.swift */,
 				8F5373702411D5C800766988 /* CategoryVC.swift */,
 				8F5A8FC6241619CD001302AA /* ProductListVC.swift */,
 				8F5A8FC824165313001302AA /* ProductDetailVC.swift */,
-				8F5373722411D5C800766988 /* Main.storyboard */,
 				8F5373752411D5C900766988 /* Assets.xcassets */,
-				8F5373772411D5C900766988 /* LaunchScreen.storyboard */,
 				8F53737A2411D5C900766988 /* Info.plist */,
 			);
 			path = ECommerceDemo;
@@ -181,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				8F5A8FC4241615E4001302AA /* CategoryCell.swift */,
+				8F5373722411D5C800766988 /* Main.storyboard */,
+				8F5373772411D5C900766988 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";

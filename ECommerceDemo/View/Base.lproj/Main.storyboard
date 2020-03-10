@@ -62,19 +62,63 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="UMF-Bo-uMw"/>
                                 </connections>
                             </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KfJ-ET-a1G">
+                                <rect key="frame" x="174" y="88" width="240" height="674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="vZI-L3-CBb"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="80" id="gPC-sR-Qwj" customClass="CategoryCell" customModule="ECommerceDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gPC-sR-Qwj" id="97Z-ia-k9N">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catgory Name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytH-A6-7X0">
+                                                    <rect key="frame" x="15" y="24" width="210" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="khE-hx-tpt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" red="0.62672841550000002" green="0.092359788720000002" blue="0.1186352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ytH-A6-7X0" secondAttribute="trailing" constant="15" id="0fe-oR-BPv"/>
+                                                <constraint firstItem="ytH-A6-7X0" firstAttribute="centerY" secondItem="97Z-ia-k9N" secondAttribute="centerY" id="6kV-5s-vZB"/>
+                                                <constraint firstItem="ytH-A6-7X0" firstAttribute="leading" secondItem="97Z-ia-k9N" secondAttribute="leading" constant="15" id="9y5-ZW-S09"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryView" destination="97Z-ia-k9N" id="h8p-7n-LDD"/>
+                                            <outlet property="lblCategoryName" destination="ytH-A6-7X0" id="nn4-9y-eHA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="PMo-G2-Y0G"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Xjj-01-9RG"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UCM-ZJ-F6u" secondAttribute="trailing" id="2Md-Ql-EPG"/>
                             <constraint firstItem="UCM-ZJ-F6u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="75r-Kv-VkL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KfJ-ET-a1G" secondAttribute="bottom" constant="100" id="9pm-WL-TdI"/>
+                            <constraint firstItem="KfJ-ET-a1G" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="88" id="GDn-yN-mpF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UCM-ZJ-F6u" secondAttribute="bottom" id="Q19-Ec-XE5"/>
                             <constraint firstItem="UCM-ZJ-F6u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VnY-mL-XVk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KfJ-ET-a1G" secondAttribute="trailing" id="kJy-bJ-2ZV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="NyC-Hg-Hne"/>
                     <connections>
-                        <outlet property="tableCategory" destination="UCM-ZJ-F6u" id="iwX-kh-6Um"/>
+                        <outlet property="tableFilterList" destination="KfJ-ET-a1G" id="c8A-ct-soy"/>
                         <segue destination="vFl-c9-i8f" kind="show" identifier="ProductListVC" id="nsN-E2-hXC"/>
                     </connections>
                 </viewController>

@@ -12,12 +12,13 @@ class ProductListVC: UIViewController {
     
     
     var productList:[Products]?
+    var strTitle = "Products"
     @IBOutlet var tableProductList : UITableView?
    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Products"
+        self.title = strTitle
        
         // Do any additional setup after loading the view.
     }

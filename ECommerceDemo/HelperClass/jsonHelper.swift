@@ -77,6 +77,40 @@ class JsonHelper{
                 
                let data = try Data(contentsOf: destinationFileUrl, options: [])
                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers, .mutableLeaves]) as? Dictionary<String, Any>
+                
+                //Parse ranking info
+                 
+                 var rankingObjList:[Rankings] = [Rankings] ()
+                let rankingDictList:[Dictionary<String,Any>] = jsonObject!["rankings"] as! [Dictionary]
+                 
+                 for ranking in rankingDictList{
+                     
+                     let rankingValue = ranking["ranking"]
+                     
+                 var productInfoList:[ProductInfo] = [ProductInfo] ()
+                 let prodInfoList:[Dictionary<String,Any>] = ranking["products"] as! [Dictionary]
+                     for productInfo in prodInfoList
+                      {
+                          
+                          let prodInfo : ProductInfo = ProductInfo(id: productInfo["id"] as? Int ?? 0, view_count: productInfo["view_count"] as? Int ?? 0)
+                          
+                          productInfoList.append(prodInfo)
+                     
+                          
+                          
+                      }
+                     
+                     let rankingObj = Rankings(ranking: rankingValue as? String ?? "", productsInfo: productInfoList)
+                     
+                     rankingObjList.append(rankingObj)
+                     
+                 }
+                 
+                
+                 globalDelegate.rankingList = rankingObjList
+                 
+                 
+                 
             
                 
                 if let categorieDictList : [Dictionary<String, Any>]   = jsonObject!["categories"] as? [Dictionary<String, Any>] {
@@ -127,11 +161,11 @@ class JsonHelper{
                             let product:Products = Products(id: productID as? Int ?? 0, name: productName as? String ?? "", date_added: "", tax: taxObj, variants: varientsObjList)
                             
                             
+                            globalDelegate.globalProductList.append(product)
                             productObjList.append(product)
                             
                         }
-                       
-                        
+                     
                         //Create category object
                         
                         let categoryObj = Categories(id: categoryID, name: categoryName, products: productObjList)
@@ -140,10 +174,10 @@ class JsonHelper{
                        
                     }
                     
-                   
-                    
                     return categoryObjList
+                    //globalDelegate.categoriesList = categoryObjList
                     
+                  
                 }
                 
                 
